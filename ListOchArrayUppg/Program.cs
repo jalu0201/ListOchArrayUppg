@@ -14,7 +14,15 @@
             // Största talet
             Console.WriteLine();
             Console.WriteLine("Demonstration av Största talet:");
-            Console.WriteLine("Största talet av testdatan är: " + GreatestNumber(testIntList)); // TODO
+            Console.WriteLine("Största talet av testdatan är: " + GreatestNumber(testIntList));
+
+            // Demonstration av Contains
+            string[] names = { "Anna", "Bertil", "Cesar" };
+            Console.WriteLine("Demonstration av Contains:");
+            Console.WriteLine("Contains(Bertil): " + Contains(names, "Bertil"));
+            Console.WriteLine("Contains(David): " + Contains(names, "David")); 
+
+
         }
 
         public static int Summan(int[] listOfNumbers)
@@ -38,6 +46,17 @@
                 
             }
             return största; 
+        }
+
+        public static bool Contains(string[] names, string name)
+        {
+            foreach (string s in names)
+            {
+                if (s == name) return true;
+            }
+
+
+            return false; 
         }
 
 
