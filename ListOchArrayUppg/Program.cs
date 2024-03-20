@@ -20,7 +20,17 @@
             string[] names = { "Anna", "Bertil", "Cesar" };
             Console.WriteLine("Demonstration av Contains:");
             Console.WriteLine("Contains(Bertil): " + Contains(names, "Bertil"));
-            Console.WriteLine("Contains(David): " + Contains(names, "David")); 
+            Console.WriteLine("Contains(David): " + Contains(names, "David"));
+
+            // Demonstration av Swap
+            int[] swapTestData = { 8, 4, 6, 9, 2, 7, 3 };
+            Console.WriteLine();
+            Console.WriteLine("Demonstration av Swap:");
+            Console.WriteLine("Före: element på index 2: " + swapTestData[2]); // 6
+            Console.WriteLine("Före: element på index 5: " + swapTestData[5]); // 7
+            Swap(2, 5, swapTestData);
+            Console.WriteLine("Efter: element på index 2: " + swapTestData[2]); // 7
+            Console.WriteLine("Efter: element på index 5: " + swapTestData[5]); // 6
 
 
         }
@@ -57,6 +67,15 @@
 
 
             return false; 
+        }
+
+        // byter plats på element i intarray på index i1 och i2
+        static void Swap(int i1, int i2, int[] intarray)
+        {
+            int swap = intarray[i1];
+            intarray[i1] = intarray[i2];
+            intarray[i2] = swap;
+           
         }
 
 
