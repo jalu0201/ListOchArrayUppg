@@ -49,7 +49,12 @@ namespace ListOchArrayUppg
             Console.WriteLine("Efter: " + string.Join(",", reverseTestData));
             Console.WriteLine();
 
-
+            // Rotate
+            string[] rotateTestData = { "a", "b", "c", "d", "e" };
+            Console.WriteLine("Demonstration av Rotate:");
+            Console.WriteLine("Före: " + string.Join(",", rotateTestData));
+            string[] rotateTestDataResult = Rotate(rotateTestData, 2);
+            Console.WriteLine("Efter: " + string.Join(",", rotateTestDataResult));
 
 
 
@@ -124,6 +129,16 @@ namespace ListOchArrayUppg
                 Swap(i, numbers.Length - 1 - i, numbers);
             }
             return ;
+        }
+
+        public static string[] Rotate(string[] strings, int n)
+        {
+            string[] result = new string [strings.Length];
+            for(int i = 0; i < strings.Length; i++)
+            {
+                result[(i+ n) % strings.Length] = strings[i];
+            }
+            return result;
         }
 
 
